@@ -14,11 +14,11 @@
         <run_type>daily</run_type>
         <script><![CDATA[var NeedIt=new GlideRecord('x_58872_needit_needit');
 //NeedIt.addQuery('state','=',13);
-NeedIt.addQuery('priority','=',2);
+NeedIt.addQuery('priority','=',3);
 NeedIt.query();
 while(NeedIt.next())
 	{
-		gs.info('NeedIt record with high priority:'+NeedIt.number);
+		gs.info('NeedIt records in critical state:'+NeedIt.number);
 		gs.eventQueue('x_58872_needit.Priority_change',NeedIt,NeedIt.number,gs.getUserName());
 	}
 
@@ -31,21 +31,21 @@ if(HpriorityCount.next())
 	{
 		cnt=HpriorityCount.getAggregate('COUNT');
 	}
-   gs.info('The Total number of records which are in moderate state are '+cnt);
+   gs.info('The Total number of records which are in critical state are '+cnt);
 
 ]]></script>
         <sys_class_name>sysauto_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2020-01-14 09:05:36</sys_created_on>
         <sys_id>2746509edb5200104c614870399619d3</sys_id>
-        <sys_mod_count>23</sys_mod_count>
+        <sys_mod_count>28</sys_mod_count>
         <sys_name>NeedIt</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sysauto_script_2746509edb5200104c614870399619d3</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-01-14 11:49:21</sys_updated_on>
+        <sys_updated_on>2020-01-14 18:05:39</sys_updated_on>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_script>
 </record_update>

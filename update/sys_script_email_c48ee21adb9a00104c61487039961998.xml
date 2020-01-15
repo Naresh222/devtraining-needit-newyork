@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_email">
+    <sys_script_email action="INSERT_OR_UPDATE">
+        <name>Count_Of_Records_For_Requestor</name>
+        <new_lines_to_html>false</new_lines_to_html>
+        <script><![CDATA[(function runMailScript(/* GlideRecord */ current, /* TemplatePrinter */ template,
+          /* Optional EmailOutbound */ email, /* Optional GlideRecord */ email_action,
+          /* Optional GlideRecord */ event) {
+
+          // Add your code here
+var NeedIt=new GlideRecord('x_58872_needit_needit');
+	NeedIt.addQuery('u_requested_for',current.u_requested_form);
+	NeedIt.addQuery('state','!=','13');
+	NeedIt.query();
+	template.print('Apart from this request'+(NeedIt.getRowCount()-1)+" NeedIt record requests that are not yet requested");
+})(current, template, email, email_action, event);]]></script>
+        <sys_class_name>sys_script_email</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-01-14 19:49:32</sys_created_on>
+        <sys_id>c48ee21adb9a00104c61487039961998</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Count_Of_Records_For_Requestor</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_email_c48ee21adb9a00104c61487039961998</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-01-14 20:18:51</sys_updated_on>
+    </sys_script_email>
+</record_update>

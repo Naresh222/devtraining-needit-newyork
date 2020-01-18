@@ -1,27 +1,71 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<database>
-    <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" type="collection">
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" sizeclass="29" type="collection">
+        <element label="Audio" max_length="40" name="audio" type="audio"/>
+        <element attributes="edge_encryption_enabled=true" label="calender data/time" max_length="40" name="calender_data_time" type="calendar_date_time"/>
+        <element label="Color" max_length="40" name="color" type="color"/>
+        <element label="Conditions" max_length="4000" name="conditions" type="conditions"/>
+        <element label="Condition string" max_length="40" name="condition_string" type="color"/>
+        <element attributes="omit_sys_original=true" label="Currency" max_length="20" name="currency" type="currency"/>
+        <element label="Data structure" max_length="800" name="data_structure" type="data_structure"/>
+        <element label="Decimal" max_length="15" name="decimal" type="decimal"/>
+        <element label="Document ID" max_length="32" name="document_id" type="document_id"/>
+        <element label="Domain ID" max_length="32" name="domain_id" type="domain_id"/>
+        <element label="Duration" max_length="40" name="duration" type="glide_duration"/>
+        <element label="Field name" max_length="80" name="field_name" type="field_name"/>
+        <element label="HTML" max_length="65536" name="html" type="html"/>
+        <element label="Icon" max_length="100" name="icon" type="icon"/>
+        <element attributes="pdf_cell_type=image" label="Image" max_length="40" name="image" type="user_image"/>
+        <element label="IP address" max_length="40" name="ip_address" type="ip_addr"/>
+        <element attributes="edge_encryption_enabled=true" label="Journal" max_length="4000" name="journal" type="journal"/>
+        <element attributes="edge_encryption_enabled=true" label="Journal input" max_length="40" name="journal_input" type="journal_input"/>
+        <element label="Journal list" max_length="40" name="journal_list" type="journal_list"/>
+        <element attributes="no_sort=true,slushbucket_ref_no_expand=true" label="List" max_length="1024" name="list" reference="sys_user" type="glide_list"/>
+        <element label="Long" max_length="40" name="long" type="longint"/>
+        <element label="Name value pairs" max_length="4000" name="name_value_pairs" type="simple_name_values"/>
+        <element label="Password (1 way Encrypted)" max_length="40" name="password_1_way_encrypted" type="password"/>
+        <element attributes="no_data_replicate=true" label="Password (2 Way Encrypted)" max_length="255" name="password_2_way_encrypted" type="password2"/>
+        <element label="Percent complete" max_length="15" name="percent_complete" type="percent_complete"/>
+        <element label="Phone Number (E164)" max_length="40" name="phone_number_e164" type="phone_number_e164"/>
+        <element attributes="omit_sys_original=true,serializer=com.glide.script.PriceXMLSerializer" label="Price" max_length="20" name="price" type="price"/>
+        <element label="Script" max_length="4000" name="script" type="script"/>
+        <element label="Script plan" max_length="4000" name="script_plan" type="script_plain"/>
+        <element attributes="edge_encryption_enabled=true" choice="2" label="Suggestion" max_length="40" name="suggestion" type="string">
+            <choice/>
+        </element>
+        <element attributes="base_start=true" label="Table name" max_length="80" name="table_name" type="table_name"/>
+        <element label="Time" max_length="40" name="time" type="glide_time"/>
+        <element attributes="encode_utf8=false" label="Translated HTML" max_length="65536" name="translated_html" type="translated_html"/>
+        <element label="Translated Text" max_length="40" name="translated_text" type="translated_text"/>
+        <element label="True/false" max_length="40" name="true_false" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" label="URL" max_length="1024" name="url" type="url"/>
         <element attributes="edge_encryption_enabled=true" label="Other" max_length="40" name="u_other" type="string"/>
         <element label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
         <element attributes="edge_encryption_enabled=true" label="Requested for email" mandatory="true" max_length="40" name="u_requested_for_email" type="string"/>
         <element attributes="edge_encryption_enabled=true" choice="3" default="legal" label="Request type" mandatory="true" max_length="40" name="u_request_type" type="string">
             <choice>
-                <element label="Human Resources" sequence="0" value="hr"/>
-                <element label="Facilities" sequence="1" value="facilities"/>
-                <element label="Legal" sequence="2" value="legal"/>
+                <element inactive="true" inactive_on_update="true" label="Developer Enablement" sequence="0" value="dev_enable"/>
+                <element inactive_on_update="false" label="Human Resources" sequence="0" value="hr"/>
+                <element inactive_on_update="false" label="Facilities" sequence="1" value="facilities"/>
+                <element inactive_on_update="false" label="Legal" sequence="2" value="legal"/>
             </choice>
         </element>
         <element attributes="edge_encryption_enabled=true" choice="3" default="hr1" label="What needed" mandatory="true" max_length="40" name="u_what_needed" type="string">
             <choice>
-                <element label="Human Resources 1" sequence="0" value="hr1"/>
-                <element label="Human Resources 2" sequence="1" value="hr2"/>
-                <element label="Facilities 1" sequence="2" value="facilities1"/>
-                <element label="Facilities 2" sequence="3" value="facilities2"/>
-                <element label="Legal 1" sequence="4" value="legal1"/>
-                <element label="Legal 2" sequence="5" value="legal2"/>
-                <element label="Other" sequence="6" value="other"/>
+                <element inactive_on_update="false" label="Human Resources 1" sequence="0" value="hr1"/>
+                <element inactive="true" inactive_on_update="true" label="Your Department Choice 1" sequence="0" value="your_choice1"/>
+                <element inactive_on_update="false" label="Human Resources 2" sequence="1" value="hr2"/>
+                <element inactive="true" inactive_on_update="true" label="Your Department Choice 2" sequence="1" value="your_choice2"/>
+                <element inactive_on_update="false" label="Facilities 1" sequence="2" value="facilities1"/>
+                <element inactive_on_update="false" label="Facilities 2" sequence="3" value="facilities2"/>
+                <element inactive_on_update="false" label="Legal 1" sequence="4" value="legal1"/>
+                <element inactive_on_update="false" label="Legal 2" sequence="5" value="legal2"/>
+                <element inactive_on_update="false" label="Other" sequence="6" value="other"/>
             </choice>
         </element>
         <element label="When needed" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
+        <element label="Video" max_length="40" name="video" type="video"/>
+        <element attributes="edge_encryption_enabled=true" label="When Needed2" max_length="40" name="when_needed2" type="glide_date"/>
+        <element attributes="is_multi_text=true,preview_first=true,preview_selector=true" label="Wiki" max_length="65536" name="wiki" type="wiki_text"/>
+        <element label="Workflow" max_length="80" name="workflow" type="workflow"/>
     </element>
 </database>
